@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Journey — Systems Over Symptoms</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #111110; color: #f5f5f0; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* NAV */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-bottom: 0.5px solid #2a2a28; position: sticky; top: 0; background: #111110; z-index: 100; }
+  .nav-logo { font-size: 15px; font-weight: 500; color: #f5f5f0; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 13px; color: #888; }
+  .nav-links a:hover { color: #f5f5f0; }
+  .nav-cta { background: #1D9E75; color: #fff !important; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; }
+  .nav-cta:hover { background: #17845f !important; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .section-label { font-size: 11px; font-weight: 500; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+
+  .btn { display: inline-block; background: #1D9E75; color: #fff; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 500; }
+  .btn:hover { background: #17845f; }
+  .btn-sub { font-size: 12px; color: #666; margin-top: 12px; }
+
+  /* HERO */
+  .hero { padding: 80px 0 64px; text-align: center; border-bottom: 0.5px solid #2a2a28; }
+  .hero h1 { font-size: 48px; font-weight: 600; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.01em; }
+  .hero p.subhead { font-size: 17px; color: #888; line-height: 1.6; max-width: 640px; margin: 0 auto; }
+
+  /* STATS */
+  .stats { padding: 64px 0; border-bottom: 0.5px solid #2a2a28; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .stat-card { border: 0.5px solid #2a2a28; border-radius: 12px; padding: 28px 24px; background: #141413; }
+  .stat-before { font-size: 11px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .stat-before-value { font-size: 18px; color: #888; text-decoration: line-through; text-decoration-color: #444; margin-bottom: 18px; }
+  .stat-after { font-size: 11px; font-weight: 500; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .stat-after-value { font-size: 26px; color: #f5f5f0; font-weight: 600; }
+
+  /* TIMELINE */
+  .timeline { padding: 80px 0; border-bottom: 0.5px solid #2a2a28; }
+  .timeline-head { text-align: center; margin-bottom: 48px; }
+  .timeline-head h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+  .timeline-head p { font-size: 15px; color: #888; }
+
+  .month-block { margin-bottom: 56px; }
+  .month-title { font-size: 20px; font-weight: 600; color: #f5f5f0; margin-bottom: 6px; }
+  .month-meta { font-size: 12px; color: #666; margin-bottom: 20px; letter-spacing: 0.05em; }
+
+  .dow-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-bottom: 10px; }
+  .dow-label { font-size: 10px; font-weight: 500; color: #555; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; padding: 4px 0; }
+
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  .tile { aspect-ratio: 9/19; border-radius: 8px; overflow: hidden; background: #1a1a18; border: 0.5px solid #2a2a28; position: relative; cursor: pointer; transition: transform 0.15s, border-color 0.15s; }
+  .tile:hover { border-color: #1D9E75; transform: translateY(-2px); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile-date { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0)); color: #f5f5f0; font-size: 11px; font-weight: 500; text-align: center; padding: 16px 4px 6px; }
+  .tile-empty { aspect-ratio: 9/19; border-radius: 8px; background: #141413; border: 0.5px dashed #222; opacity: 0.5; }
+
+  /* LIGHTBOX */
+  .lb { position: fixed; inset: 0; background: rgba(0,0,0,0.92); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 32px; cursor: zoom-out; }
+  .lb.open { display: flex; }
+  .lb-inner { max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; cursor: default; }
+  .lb img { max-width: 90vw; max-height: 82vh; border-radius: 8px; object-fit: contain; }
+  .lb-caption { font-size: 14px; color: #aaa; font-weight: 500; }
+  .lb-close { position: absolute; top: 20px; right: 24px; font-size: 28px; color: #888; background: none; border: none; cursor: pointer; padding: 8px 12px; line-height: 1; }
+  .lb-close:hover { color: #f5f5f0; }
+
+  /* BOTTOM CTA */
+  .final { border-left: 4px solid #1D9E75; padding: 72px 32px 72px 44px; background: #141413; max-width: 1100px; margin: 80px auto; border-radius: 0 12px 12px 0; text-align: left; }
+  .final .quote { font-size: 26px; line-height: 1.4; font-weight: 500; color: #f5f5f0; margin-bottom: 24px; max-width: 820px; }
+
+  /* FOOTER */
+  footer { padding: 40px 32px 32px; border-top: 0.5px solid #1e1e1c; text-align: center; }
+  .footer-links { display: flex; gap: 28px; justify-content: center; margin-bottom: 18px; }
+  .footer-links a { font-size: 13px; color: #888; }
+  .footer-links a:hover { color: #f5f5f0; }
+  .footer-meta { font-size: 12px; color: #444; line-height: 1.8; }
+
+  @media (max-width: 820px) {
+    .hero h1 { font-size: 36px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .dow-row { display: none; }
+    .cal-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .tile-empty { display: none; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .final .quote { font-size: 20px; }
+  }
+  @media (max-width: 480px) {
+    .cal-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Systems Over Symptoms</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="journey.html">My Journey</a>
+    <a href="meals.html">What I Eat</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="https://bit.ly/SOS-community" class="nav-cta">Join Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="section-label">The Journey</div>
+    <h1>233 Days. Every Single One.</h1>
+    <p class="subhead">This is my real data. Every reading. Every spike. Every win. No filters. No cherry picking. This is what it actually looks like to reclaim your life from diabetes.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-before">Day 1 Blood Sugar</div>
+        <div class="stat-before-value">377 mg/dL</div>
+        <div class="stat-after">Current Blood Sugar</div>
+        <div class="stat-after-value">109 mg/dL</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-before">A1C Start</div>
+        <div class="stat-before-value">13</div>
+        <div class="stat-after">GMI Now</div>
+        <div class="stat-after-value">5.8</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-before">Insulin Start</div>
+        <div class="stat-before-value">35 units daily</div>
+        <div class="stat-after">Insulin Now</div>
+        <div class="stat-after-value">Zero</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="container">
+    <div class="timeline-head">
+      <div class="section-label">The Timeline</div>
+      <h2>The Story, Forward.</h2>
+      <p>Tap any day to see the reading up close.</p>
+    </div>
+    <div id="months"></div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="final">
+  <p class="quote">This is what's possible. Start your own journey.</p>
+  <a href="https://bit.ly/SOS-community" class="btn">Join Free</a>
+  <div class="btn-sub">No credit card. No commitment. Free to join.</div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <div class="lb-inner">
+    <img id="lbImg" alt="">
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="journey.html">My Journey</a>
+    <a href="meals.html">What I Eat</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="https://bit.ly/SOS-community">Community</a>
+  </div>
+  <div class="footer-meta">
+    Systems Over Symptoms — Algorithm Collective LLC<br>
+    dropinsulin.com
+  </div>
+</footer>
+
+<script>
+  // Image list — YYYY-MM-DD, oldest to newest
+  const DATES = [
+    '2026-03-12','2026-03-13','2026-03-14','2026-03-15','2026-03-16','2026-03-17','2026-03-18',
+    '2026-03-19','2026-03-20','2026-03-21','2026-03-22','2026-03-23','2026-03-24','2026-03-25',
+    '2026-03-26','2026-03-27','2026-03-28','2026-03-29','2026-03-30','2026-03-31',
+    '2026-04-01','2026-04-02','2026-04-03','2026-04-04','2026-04-05','2026-04-06','2026-04-07',
+    '2026-04-08','2026-04-09','2026-04-10','2026-04-11','2026-04-12','2026-04-13','2026-04-14',
+    '2026-04-15','2026-04-16','2026-04-17','2026-04-18','2026-04-19'
+  ];
+
+  const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const DOW_SHORT = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const DOW_LONG = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+
+  // Group by year-month
+  function groupByMonth(dates) {
+    const groups = new Map();
+    for (const d of dates) {
+      const key = d.slice(0, 7);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(d);
+    }
+    return groups;
+  }
+
+  // Monday=0 .. Sunday=6
+  function mondayIndex(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const js = new Date(y, m - 1, d).getDay(); // Sun=0..Sat=6
+    return (js + 6) % 7;
+  }
+
+  function prettyDate(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const dow = DOW_LONG[mondayIndex(dateStr)];
+    return `${dow}, ${MONTH_NAMES[m - 1]} ${d}, ${y}`;
+  }
+
+  // Render
+  const root = document.getElementById('months');
+  const groups = groupByMonth(DATES);
+
+  for (const [key, days] of groups) {
+    const [y, m] = key.split('-').map(Number);
+
+    const block = document.createElement('div');
+    block.className = 'month-block';
+
+    const title = document.createElement('div');
+    title.className = 'month-title';
+    title.textContent = `${MONTH_NAMES[m - 1]} ${y}`;
+    block.appendChild(title);
+
+    const meta = document.createElement('div');
+    meta.className = 'month-meta';
+    meta.textContent = `${days.length} day${days.length === 1 ? '' : 's'} tracked`;
+    block.appendChild(meta);
+
+    // Day-of-week header (desktop only — hidden on mobile via CSS)
+    const dowRow = document.createElement('div');
+    dowRow.className = 'dow-row';
+    for (const d of DOW_SHORT) {
+      const cell = document.createElement('div');
+      cell.className = 'dow-label';
+      cell.textContent = d;
+      dowRow.appendChild(cell);
+    }
+    block.appendChild(dowRow);
+
+    const grid = document.createElement('div');
+    grid.className = 'cal-grid';
+
+    days.forEach((dateStr, idx) => {
+      const tile = document.createElement('button');
+      tile.className = 'tile';
+      tile.type = 'button';
+      tile.dataset.date = dateStr;
+      if (idx === 0) {
+        tile.style.gridColumnStart = mondayIndex(dateStr) + 1;
+      }
+
+      const img = document.createElement('img');
+      img.src = `images/journey/${dateStr}.PNG`;
+      img.alt = `CGM screenshot — ${prettyDate(dateStr)}`;
+      img.loading = 'lazy';
+      tile.appendChild(img);
+
+      const lbl = document.createElement('div');
+      lbl.className = 'tile-date';
+      const [, , d] = dateStr.split('-');
+      lbl.textContent = `${MONTH_NAMES[m - 1].slice(0,3)} ${parseInt(d, 10)}`;
+      tile.appendChild(lbl);
+
+      tile.addEventListener('click', () => openLB(dateStr));
+      grid.appendChild(tile);
+    });
+
+    block.appendChild(grid);
+    root.appendChild(block);
+  }
+
+  // Lightbox
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
+
+  function openLB(dateStr) {
+    lbImg.src = `images/journey/${dateStr}.PNG`;
+    lbImg.alt = `CGM screenshot — ${prettyDate(dateStr)}`;
+    lbCap.textContent = prettyDate(dateStr);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLB() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) closeLB();
+  });
+  lbClose.addEventListener('click', closeLB);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLB();
+  });
+</script>
+
+</body>
+</html>

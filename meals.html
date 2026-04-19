@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What I Eat — Systems Over Symptoms</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #111110; color: #f5f5f0; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* NAV */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-bottom: 0.5px solid #2a2a28; position: sticky; top: 0; background: #111110; z-index: 100; }
+  .nav-logo { font-size: 15px; font-weight: 500; color: #f5f5f0; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 13px; color: #888; }
+  .nav-links a:hover { color: #f5f5f0; }
+  .nav-cta { background: #1D9E75; color: #fff !important; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; }
+  .nav-cta:hover { background: #17845f !important; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .section-label { font-size: 11px; font-weight: 500; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+
+  .btn { display: inline-block; background: #1D9E75; color: #fff; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 500; }
+  .btn:hover { background: #17845f; }
+  .btn-sub { font-size: 12px; color: #666; margin-top: 12px; }
+
+  /* HERO */
+  .hero { padding: 80px 0 72px; text-align: center; border-bottom: 0.5px solid #2a2a28; }
+  .hero h1 { font-size: 48px; font-weight: 600; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.01em; }
+  .hero p.subhead { font-size: 17px; color: #888; line-height: 1.6; max-width: 680px; margin: 0 auto 32px; }
+  .rule-box { max-width: 720px; margin: 0 auto; background: #1D9E75; color: #fff; border-radius: 10px; padding: 20px 28px; font-size: 16px; font-weight: 500; line-height: 1.5; }
+  .rule-box strong { font-weight: 700; }
+
+  /* FOOD SECTIONS */
+  .meals { padding: 80px 0 40px; }
+  .meal-block { margin-bottom: 64px; }
+  .meal-block h2 { font-size: 32px; font-weight: 600; margin-bottom: 24px; letter-spacing: -0.01em; }
+  .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .card { background: #141413; border: 0.5px solid #2a2a28; border-radius: 12px; overflow: hidden; transition: transform 0.15s, border-color 0.15s; }
+  .card:hover { border-color: #1D9E75; transform: translateY(-2px); }
+  .card-img { aspect-ratio: 1/1; background: #1a1a18; overflow: hidden; }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; }
+  .card-body { padding: 18px 20px 22px; }
+  .card-name { font-size: 16px; font-weight: 600; color: #f5f5f0; margin-bottom: 6px; }
+  .card-carbs { font-size: 13px; color: #1D9E75; font-weight: 500; }
+
+  /* CALLOUT */
+  .callout { margin: 24px 0 72px; padding: 40px 44px; border: 1px solid #1D9E75; background: rgba(29, 158, 117, 0.08); border-radius: 12px; }
+  .callout .quote { font-size: 22px; line-height: 1.5; font-weight: 500; color: #f5f5f0; margin-bottom: 16px; }
+  .callout .attr { font-size: 13px; color: #1D9E75; font-weight: 500; letter-spacing: 0.05em; }
+
+  /* BOTTOM CTA */
+  .final { border-left: 4px solid #1D9E75; padding: 80px 32px 80px 44px; background: #141413; max-width: 1100px; margin: 40px auto 80px; border-radius: 0 12px 12px 0; }
+  .final h2 { font-size: 28px; line-height: 1.3; font-weight: 600; color: #f5f5f0; margin-bottom: 14px; max-width: 820px; }
+  .final p { font-size: 16px; color: #aaa; line-height: 1.6; margin-bottom: 28px; max-width: 700px; }
+
+  /* FOOTER */
+  footer { padding: 40px 32px 32px; border-top: 0.5px solid #1e1e1c; text-align: center; }
+  .footer-links { display: flex; gap: 28px; justify-content: center; margin-bottom: 18px; }
+  .footer-links a { font-size: 13px; color: #888; }
+  .footer-links a:hover { color: #f5f5f0; }
+  .footer-meta { font-size: 12px; color: #444; line-height: 1.8; }
+
+  @media (max-width: 820px) {
+    .hero h1 { font-size: 36px; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+    .meal-block h2 { font-size: 26px; }
+    .callout { padding: 28px; }
+    .callout .quote { font-size: 18px; }
+    .final h2 { font-size: 22px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Systems Over Symptoms</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="journey.html">My Journey</a>
+    <a href="meals.html">What I Eat</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="https://bit.ly/SOS-community" class="nav-cta">Join Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="section-label">What I Eat</div>
+    <h1>Real Food. Zero Deprivation.</h1>
+    <p class="subhead">People think I'm suffering. I'm eating crab legs, steak, and ice cream with whipped cream every night. Here's everything I actually eat to keep my blood sugar stable and my insulin at zero.</p>
+    <div class="rule-box">The only rule — <strong>no more than 6–7 net carbs per meal</strong>. That's the entire system.</div>
+  </div>
+</section>
+
+<!-- MEALS -->
+<section class="meals">
+  <div class="container">
+
+    <div class="meal-block">
+      <h2>Breakfast</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img"><img src="images/meals/breakfast-bonebroth.png" alt="Bone Broth" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Bone Broth</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/breakfast-eggs.png" alt="Scrambled Eggs" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Scrambled Eggs</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/breakfast-proteinshake.png" alt="Protein Shake" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Protein Shake</div>
+            <div class="card-carbs">3–5g net carbs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-block">
+      <h2>Lunch</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img"><img src="images/meals/lunch-chickenwings.png" alt="Chicken Wings" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Chicken Wings</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/lunch-hamburgernobun.png" alt="Burger No Bun" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Burger No Bun</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/lunch-saladgrilledchicken.png" alt="Grilled Chicken Salad" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Grilled Chicken Salad</div>
+            <div class="card-carbs">4–6g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/lunch-tunasalad.png" alt="Tuna Salad" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Tuna Salad</div>
+            <div class="card-carbs">0–2g net carbs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-block">
+      <h2>Dinner</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img"><img src="images/meals/dinner-crablegs.png" alt="Crab Legs" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Crab Legs</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/dinner-steak.png" alt="Steak" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Steak</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/dinner_meat_platter.jpg" alt="Meat Platter" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Meat Platter</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p class="quote">"You think this is a punishment diet? I eat crab legs for dinner. I have ice cream with whipped cream for dessert. I am not suffering. I am thriving. And my blood sugar proves it."</p>
+      <div class="attr">— Ben, Systems Over Symptoms</div>
+    </div>
+
+    <div class="meal-block">
+      <h2>Snacks</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img"><img src="images/meals/snack-carbsmart.png" alt="Carb Smart Ice Cream" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Carb Smart Ice Cream</div>
+            <div class="card-carbs">4–6g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/snack-celerycreamcheese.png" alt="Celery with Cream Cheese" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Celery with Cream Cheese</div>
+            <div class="card-carbs">2g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/snack-porkrind.png" alt="Pork Rinds" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Pork Rinds</div>
+            <div class="card-carbs">0g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/snack-stringchease.png" alt="String Cheese" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">String Cheese</div>
+            <div class="card-carbs">1g net carbs</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="images/meals/snack-whipcream.png" alt="Whipped Cream" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Whipped Cream</div>
+            <div class="card-carbs">1g net carbs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="final">
+  <h2>Want to eat like this and drop your insulin too?</h2>
+  <p>Join free. Get the full food list, label reading guide, and dining out guide inside the community.</p>
+  <a href="https://bit.ly/SOS-community" class="btn">Join Free — Start Today</a>
+  <div class="btn-sub">No credit card. No commitment. Free to join.</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="journey.html">My Journey</a>
+    <a href="meals.html">What I Eat</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="https://bit.ly/SOS-community">Community</a>
+  </div>
+  <div class="footer-meta">
+    Systems Over Symptoms — Algorithm Collective LLC<br>
+    dropinsulin.com
+  </div>
+</footer>
+
+</body>
+</html>
