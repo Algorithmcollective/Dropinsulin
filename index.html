@@ -91,7 +91,10 @@
   .badge-soon { background: #1e1e1c; color: #555; }
 
   /* PRICING */
-  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+  .founding-banner { margin-top: 32px; background: #1D9E75; color: #fff; padding: 16px 24px; border-radius: 10px; text-align: center; font-size: 15px; font-weight: 500; line-height: 1.5; box-shadow: 0 4px 16px rgba(29, 158, 117, 0.25); }
+  .founding-banner strong { font-weight: 700; }
+  .lock-in { font-size: 11px; color: #1D9E75; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; margin-top: -8px; }
+  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
   .price-card { border: 0.5px solid #2a2a28; border-radius: 12px; padding: 28px 22px; background: #141413; display: flex; flex-direction: column; }
   .price-card.featured { border: 1px solid #1D9E75; position: relative; }
   .price-popular { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: #1D9E75; color: #fff; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
@@ -292,6 +295,8 @@
     <div class="section-label">Join The Community</div>
     <h2>Start Free. Go Deeper When You're Ready.</h2>
 
+    <div class="founding-banner">🚨 <strong>Founding Member Pricing</strong> — Limited Time Only. Prices increase once founding member spots are filled.</div>
+
     <div class="price-grid">
       <div class="price-card">
         <div class="price-tier">Free</div>
@@ -309,6 +314,7 @@
         <div class="price-tier">Basic</div>
         <div class="price-amt"><span style="text-decoration: line-through; text-decoration-color: #666; color: #666; font-weight: 500; margin-right: 8px;">$47</span>$37</div>
         <div class="price-per">/ month</div>
+        <div class="lock-in">Lock in this rate forever</div>
         <ul class="price-list">
           <li>Everything in Free</li>
           <li>Label reading sessions</li>
@@ -323,6 +329,7 @@
         <div class="price-tier">High Touch</div>
         <div class="price-amt"><span style="text-decoration: line-through; text-decoration-color: #666; color: #666; font-weight: 500; margin-right: 8px;">$97</span>$77</div>
         <div class="price-per">/ month</div>
+        <div class="lock-in">Lock in this rate forever</div>
         <ul class="price-list">
           <li>Everything in Basic</li>
           <li>1-on-1 30 min Zoom with Ben</li>
