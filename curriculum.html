@@ -16,11 +16,19 @@
   .nav-cta { background: #1D9E75; color: #fff !important; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; }
   .nav-cta:hover { background: #17845f !important; color: #fff; }
 
-  .hero { text-align: center; padding: 72px 32px 48px; border-bottom: 0.5px solid #2a2a28; }
+  .hero { text-align: center; padding: 72px 32px 32px; border-bottom: 0.5px solid #2a2a28; }
   .hero-label { font-size: 11px; font-weight: 500; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
   .hero h1 { font-size: 42px; font-weight: 600; color: #f5f5f0; line-height: 1.15; margin-bottom: 16px; }
-  .hero p { font-size: 16px; color: #888; max-width: 560px; margin: 0 auto 32px; line-height: 1.6; }
-  .hero-cta { display: inline-block; background: #1D9E75; color: #fff; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; }
+  .hero p { font-size: 16px; color: #888; max-width: 560px; margin: 0 auto 28px; line-height: 1.6; }
+  .hero-cta { display: inline-block; background: #1D9E75; color: #fff; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; margin-bottom: 36px; }
+
+  .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; max-width: 720px; margin: 0 auto 24px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 600; color: #1D9E75; line-height: 1; }
+  .stat-label { font-size: 11px; color: #777; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+
+  .quote-bar { text-align: center; padding: 28px 32px; border-bottom: 0.5px solid #2a2a28; background: #0d0d0c; }
+  .quote-bar p { font-size: 15px; color: #aaa; font-style: italic; max-width: 720px; margin: 0 auto; line-height: 1.5; }
 
   .container { max-width: 860px; margin: 0 auto; padding: 60px 32px; }
 
@@ -45,15 +53,37 @@
   .module-body { border-top: 0.5px solid #2a2a28; padding: 0; display: none; }
   .module-body.open { display: block; }
 
-  .lesson { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-bottom: 0.5px solid #1e1e1c; }
+  .lesson { padding: 18px 20px; border-bottom: 0.5px solid #1e1e1c; }
   .lesson:last-child { border-bottom: none; }
+  .lesson-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
   .lesson-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .dot-live { background: #1D9E75; }
   .dot-soon { background: #2a2a28; border: 1px solid #444; }
-  .lesson-name { font-size: 13px; color: #aaa; flex: 1; }
+  .lesson-name { font-size: 14px; font-weight: 500; color: #aaa; flex: 1; }
   .lesson-name.live { color: #f5f5f0; }
   .lesson-status { font-size: 11px; color: #444; }
   .lesson-status.live { color: #1D9E75; }
+
+  .lance { font-size: 12px; color: #1D9E75; font-style: italic; padding-left: 20px; margin-bottom: 10px; line-height: 1.4; }
+  .lance::before { content: "Lance Bumper: "; color: #666; font-style: normal; font-weight: 500; }
+
+  .resources { display: flex; flex-direction: column; gap: 6px; padding-left: 20px; }
+  .resource { display: flex; align-items: baseline; gap: 10px; font-size: 12.5px; color: #888; line-height: 1.5; }
+  .res-tag { font-size: 9.5px; font-weight: 600; color: #1D9E75; background: #0F3D2A; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.05em; flex-shrink: 0; min-width: 50px; text-align: center; text-transform: uppercase; }
+  .res-tag.tag-pdf { color: #c79b3b; background: #2a2010; }
+  .res-tag.tag-sheet { color: #5a9bd4; background: #0f1d2a; }
+  .res-tag.tag-read { color: #aaa; background: #1e1e1c; }
+  .res-tag.tag-cmt { color: #666; background: #1a1a18; }
+
+  .assignment { background: #0F3D2A22; border: 0.5px solid #1D9E75; border-radius: 10px; padding: 20px; margin: 16px 20px 20px; }
+  .assignment-label { font-size: 10.5px; font-weight: 600; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .assignment-title { font-size: 14px; font-weight: 500; color: #f5f5f0; margin-bottom: 12px; }
+  .assignment ul { list-style: none; padding: 0; }
+  .assignment li { font-size: 13px; color: #bbb; padding: 5px 0 5px 22px; position: relative; line-height: 1.5; }
+  .assignment li::before { content: "✓"; position: absolute; left: 0; color: #1D9E75; font-weight: 600; }
+
+  .warn { background: #2a1010; border: 0.5px solid #8a3030; border-radius: 10px; padding: 14px 18px; margin: 16px 20px 8px; font-size: 12.5px; color: #d99; line-height: 1.5; }
+  .warn strong { color: #f5b8b8; }
 
   .divider { border: none; border-top: 0.5px solid #2a2a28; margin: 48px 0; }
 
@@ -78,10 +108,21 @@
 </nav>
 
 <div class="hero">
-  <div class="hero-label">The Full System</div>
+  <div class="hero-label">Master Course Syllabus</div>
   <h1>10 Modules.<br>Everything You Need.</h1>
   <p>This isn't a collection of tips. It's a complete system built from 14 years of living with diabetes and doing what nobody else would tell me to do.</p>
   <a href="https://bit.ly/SOS-community" class="hero-cta">Join Free — Start Module 1 Today</a>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Modules</div></div>
+    <div class="stat"><div class="stat-num">47</div><div class="stat-label">Lessons</div></div>
+    <div class="stat"><div class="stat-num">29</div><div class="stat-label">PDFs</div></div>
+    <div class="stat"><div class="stat-num">38</div><div class="stat-label">Videos</div></div>
+  </div>
+</div>
+
+<div class="quote-bar">
+  <p>"If you want the system — it's here. If you want excuses — find those somewhere else."</p>
 </div>
 
 <div class="container">
@@ -90,65 +131,357 @@
   <div class="phase-title">Phase 1 — Live and Ready</div>
   <div class="phase-sub">Start here. These modules are fully built and waiting for you.</div>
 
+  <!-- MODULE 01 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">01</span>
       <div class="module-info">
         <div class="module-name">Start Here</div>
-        <div class="module-goal">Who I am, what this is, and exactly what to do first</div>
+        <div class="module-goal">New member knows exactly who you are, what this community is, how to use it, and what to do first</div>
       </div>
       <span class="module-badge badge-live">Live Now</span>
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Welcome & My Story</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">How To Use This Community</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">The Community Pledge</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Your Baseline — Face Your Numbers</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Goal Setting That Actually Sticks</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Safety & Disclaimers — Read This First</div><span class="lesson-status live">Available</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 1 — Welcome &amp; My Story</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Who Is This Guy?</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Who I Am and Why I Built This (8–10 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>My Story — Read This</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>What To Expect On This Journey</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>My Story In Numbers</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 2 — How To Use This Community</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Don't Get Lost In Here</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Community Tour — Screen Recording (9 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Where To Post What</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Community Quick Start Guide</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 3 — The Community Pledge</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Time To Commit</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Why Accountability Changes Everything (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Pledge Explained</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Community Pledge</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 4 — Your Baseline</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Face Your Numbers</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>You Can't Fix What You Don't Measure (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>What Your Numbers Mean</span></div>
+          <div class="resource"><span class="res-tag tag-sheet">Sheet</span><span>Baseline Tracker</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 5 — Goal Setting That Actually Sticks</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Where Are We Going?</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Setting Goals That Actually Stick (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Set Real Goals</span></div>
+          <div class="resource"><span class="res-tag tag-sheet">Sheet</span><span>30/60/90 Day Goals</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 6 — Safety &amp; Disclaimers</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">This Part Is Important</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Please Read Before Continuing</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Emergency Reference Card</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="assignment">
+        <div class="assignment-label">Module 1 Assignment</div>
+        <div class="assignment-title">Complete Before Moving On</div>
+        <ul>
+          <li>Post introduction in Introductions</li>
+          <li>Post starting number in My Numbers</li>
+          <li>Download and fill out Baseline Tracker</li>
+          <li>Download and sign the Community Pledge</li>
+          <li>Download and fill out 30/60/90 Day Goals</li>
+          <li>Write your WHY in a post</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 02 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">02</span>
       <div class="module-info">
         <div class="module-name">The System</div>
-        <div class="module-goal">What to eat, what to drink, how to read labels, how to live</div>
+        <div class="module-goal">Member knows exactly what to eat, what to drink, how to read labels, and how to navigate real life</div>
       </div>
       <span class="module-badge badge-live">Live Now</span>
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Your CGM Is Just Data — What You Do With It Matters</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">The Cold Turkey Decision</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">The 6-7 Carb Rule — Label Reading 101</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">What I Eat Every Day</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">What I Drink</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Dining Out Guide</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Sweet Tooth Solutions</div><span class="lesson-status live">Available</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 1 — Your CGM Is Just Data</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Your CGM Is Just Data</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Sensor Is Accountability Not Magic (5–8 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Face Your Numbers — No More Ignoring It</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 2 — The Cold Turkey Decision</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">I Will Not</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Why I Went All In And Never Looked Back (5–8 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>I Can't vs I Won't — Know The Difference</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 3 — The 6-7 Carb Rule — Label Reading 101</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">The 30 Second Label Rule</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>How To Read A Label In Under 30 Seconds (5–8 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Hidden Sugars, Net Carbs, What They Don't Tell You</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Label Reading Cheat Sheet — Green Yellow Red Foods</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 4 — What I Eat Every Day</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">It Is Not Complicated</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>My Exact Daily Food List (5–8 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Simple Foods That Work</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Safe Foods List</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 5 — What I Drink</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Put The Soda Down</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>What I Drink And What I Avoid (5–8 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Drinks That Work — Drinks That Don't</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 6 — Dining Out Guide</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">You Just Need A Plan</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>How To Eat Out Without Blowing It (5–8 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Dining Out Strategy</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Dining Out Guide</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 7 — Sweet Tooth Solutions</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Two Weeks</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Killing The Sweet Tooth (5–8 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Sweet Alternatives That Actually Work</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Sweet Tooth Alternatives List</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 03 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">03</span>
       <div class="module-info">
         <div class="module-name">Understanding Your Numbers</div>
-        <div class="module-goal">What your CGM is actually telling you and why your numbers move</div>
+        <div class="module-goal">Member understands what their CGM is telling them and why their numbers move</div>
       </div>
       <span class="module-badge badge-partial">Lesson 1 Live</span>
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-live"></div><div class="lesson-name live">Steady vs Low — The Core Principle</div><span class="lesson-status live">Available</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Food → Glucose → You</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Things That Spike You With No Food</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Work Day vs Off Day Pattern</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Sleep and Blood Sugar</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Shot Cycle Trough Days</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Water and Walking — Free and Immediate</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-live"></div>
+          <div class="lesson-name live">Lesson 1 — Steady vs Low — The Core Principle</div>
+          <span class="lesson-status live">Available</span>
+        </div>
+        <div class="lance">Steady Beats Low Every Time</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Why Steady Beats Low Every Time (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Number That Actually Matters</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — Food → Glucose → You</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">You Think You Know What Spikes You</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Tracking What Actually Spikes You (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Find Your Personal Trigger Foods</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Spike Trigger Tracker</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — Things That Spike You With No Food</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">It's Not Always The Food</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Stress, Cortisol, Liver Dumps, Dawn Phenomenon (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Why Your Numbers Are Weird Even When You Eat Right</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 4 — Work Day vs Off Day Pattern</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">The Data Will Blow Your Mind</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>My Documented Stress And Cortisol Data (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>What My CGM Showed About Work Stress</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Weekly Pattern Tracker</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 5 — Sleep and Blood Sugar</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">How Did You Sleep Last Night?</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>How Sleep Wrecks Your Numbers (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Sleep And Sugar Connection</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 6 — Shot Cycle Trough Days</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Peak Days And Trough Days</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Understanding Your Weekly Cycle (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Peak Days vs Trough Days</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Shot Cycle Calendar</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 7 — Water and Walking — Free and Immediate</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Two Tools. Zero Dollars.</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Two Free Tools That Actually Work (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How Water And Walking Changed My Numbers</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -158,6 +491,7 @@
   <div class="phase-title">The Deep Work</div>
   <div class="phase-sub">Being built now. Join free and you'll get access the moment each module drops.</div>
 
+  <!-- MODULE 04 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">04</span>
@@ -169,15 +503,97 @@
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">How The CGM Actually Works</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">The 20 Point Rule</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">False Lows</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Always Verify Before Acting</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">The Night The Internet Almost Killed Me</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Combining CGM With Body Awareness</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 1 — How The CGM Actually Works</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">What The Sensor Is Actually Measuring</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>What The Sensor Is Actually Measuring (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>CGM vs Finger Prick — What's The Difference</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — The 20 Point Rule</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">When The Numbers Don't Match</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Why CGM And Finger Prick Differ (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>When The Difference Matters And When It Doesn't</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — False Lows</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Don't Panic Yet</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>My False Low Experience (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Tell The Difference</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 4 — Always Verify Before Acting</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Never Act On One Reading Alone</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Never Act On One Reading Alone (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Verification Rule</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>CGM Alert Action Checklist</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 5 — The Night The Internet Almost Killed Me</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">This One Is Important</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Night I Didn't Take My Insulin (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Full Story And What I Learned</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 6 — Combining CGM With Body Awareness</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Listen To Both</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Listen To Your Body AND The Data (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>What Your Body Is Telling You</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Body Awareness Journal</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 05 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">05</span>
@@ -189,15 +605,97 @@
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Feel Sorry or Fix It — Pick One</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">The Excuse Inventory</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Your Why Has to Be Bigger Than Your Cravings</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Dealing With People Who Don't Support You</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">When You Slip — And You Will</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Building the Identity of Someone Who Does This</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 1 — Feel Sorry or Fix It — Pick One</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">The Number Changes Everything</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Number In Your Face Changes Everything (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Why Accountability Beats Willpower Every Time</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Daily Accountability Check In Sheet</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — The Excuse Inventory</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Say It Right</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Most Powerful Mindset Shift (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>You Are Choosing This — Own It</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — Your Why Has To Be Bigger Than Your Cravings</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Which One Are You?</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Are You A Totality Person? (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Why I Went Cold Turkey And You Might Too</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 4 — Dealing With People Who Don't Support You</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Come Back Tomorrow</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Not Everyone Will Clap For You (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Handle The Doubters</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Excuse Buster Worksheet</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 5 — When You Slip — And You Will</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Keep Going Anyway</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>What To Do When You Want To Quit (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Push Through Without Burning Out</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 6 — Building the Identity of Someone Who Does This</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Not Today</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Chocolate Pretzel Story (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Not Today Is More Powerful Than Never Again</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 06 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">06</span>
@@ -209,13 +707,67 @@
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Walking Is the Medicine They're Not Prescribing</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">After Meal Walks — The 15 Minute Rule</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Strength Training and Blood Sugar</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Exercise Timing and Your CGM</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 1 — Walking Is the Medicine They're Not Prescribing</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Measure It First</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>What I Learned About Exercise And Blood Sugar (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Exercise And Glucose Relationship</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — After Meal Walks — The 15 Minute Rule</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Not All Exercise Is The Same</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>My 15 Minute After Meal Walk Results (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How Timing Your Walks Changes Your Numbers</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — Strength Training and Blood Sugar</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Muscle Is Medicine</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>My 90 Day Goal — In The Gym Building Muscle (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Why Muscle Mass Matters For Glucose Control</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 4 — Exercise Timing and Your CGM</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Timing Is Everything</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>When To Exercise For Best Glucose Results (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Time Workouts Around Your Numbers</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 07 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">07</span>
@@ -227,13 +779,67 @@
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Cortisol Is Spiking You — Not Your Food</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">The Dawn Phenomenon</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Sleep Quality and Glucose</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Stress Management That Actually Works</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 1 — Cortisol Is Spiking You — Not Your Food</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Stress Is Spiking You</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Stress Is Spiking Your Sugar (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Manage Stress Spikes</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — The Dawn Phenomenon</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Why Are Your Numbers High In The Morning?</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Dawn Phenomenon Explained (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>What's Happening At 4AM</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — Sleep Quality and Glucose</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">How Did You Sleep Last Night?</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>How Sleep Wrecks Your Numbers (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Sleep And Sugar Connection</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 4 — Stress Management That Actually Works</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">You Can't Fix What You Won't Face</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>My Stress Management System (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Practical Tools For Stress Control</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 08 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">08</span>
@@ -245,12 +851,55 @@
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Travel</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Alcohol</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Holidays</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 1 — Travel</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">You Need A Plan Before You Leave</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>How To Travel Without Destroying Your Numbers (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Travel Strategy For Diabetics</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Travel Prep Checklist</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — Alcohol</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">It Is Complicated</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Honest Truth About Alcohol And Blood Sugar (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Handle Social Situations And Drinking</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — Holidays</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">The Hardest Meals Of The Year</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Hardest Meals Of The Year (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Survive The Holidays Without Blowing Everything</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Holiday Survival Guide</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 09 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">09</span>
@@ -262,13 +911,69 @@
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">The Declaration Assignment</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">The Family Contract</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Find Your Accountability Person</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">The 30 Day Challenge</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 1 — The Declaration Assignment</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Say It Out Loud</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Make Your Declaration Out Loud (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Why Saying It Changes Everything</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Declaration Assignment</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — The Family Contract</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Get Your People On Board</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Getting Your People On Board</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Family Support Contract</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — Find Your Accountability Person</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">You Need One Person</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Why You Need One Person Who Checks On You</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Support System Builder</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 4 — The 30 Day Challenge</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">30 Days No Excuses</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>The Rules Of The Challenge</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>30 Day Challenge Tracker</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Daily Habit Checklist</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- MODULE 10 -->
   <div class="module">
     <div class="module-header" onclick="toggle(this)">
       <span class="module-num">10</span>
@@ -280,11 +985,83 @@
       <span class="chevron">▼</span>
     </div>
     <div class="module-body">
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">My Numbers Are Still High</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Hidden Carbs</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Sick Days</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">Stress Spikes</div><span class="lesson-status">Coming Soon</span></div>
-      <div class="lesson"><div class="lesson-dot dot-soon"></div><div class="lesson-name">When To Call Your Doctor</div><span class="lesson-status">Coming Soon</span></div>
+
+      <div class="warn">
+        <strong>⚠️ If you are experiencing a medical emergency — call 911.</strong> This module is for general troubleshooting only and is not a substitute for medical care.
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 1 — My Numbers Are Still High — Here's Why</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Let's Figure This Out</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Most Common Reasons And Fixes (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Troubleshooting High Numbers</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 2 — Hidden Carbs</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">It Is In There Somewhere</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>The Hidden Carbs Nobody Talks About (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>What Is Sneaking Into Your Diet</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Hidden Carbs Watch List</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 3 — Sick Days</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Being Sick Makes It Harder</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>What Happens To Your Numbers When You Get Sick (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Manage Blood Sugar When You Are Ill</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 4 — Stress Spikes</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Stress Is Spiking You</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag">Video</span><span>Stress Is Spiking Your Sugar (5 mins)</span></div>
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>How To Manage Stress Spikes</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-head">
+          <div class="lesson-dot dot-soon"></div>
+          <div class="lesson-name">Lesson 5 — When To Call Your Doctor</div>
+          <span class="lesson-status">Coming Soon</span>
+        </div>
+        <div class="lance">Know When To Pick Up The Phone</div>
+        <div class="resources">
+          <div class="resource"><span class="res-tag tag-read">Read</span><span>Know When To Pick Up The Phone</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Doctor Visit Prep Sheet</span></div>
+          <div class="resource"><span class="res-tag tag-pdf">PDF</span><span>Troubleshooting Decision Tree</span></div>
+          <div class="resource"><span class="res-tag tag-cmt">Comments</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
