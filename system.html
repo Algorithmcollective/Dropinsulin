@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The System — Systems Over Symptoms</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #111110; color: #f5f5f0; }
+  a { color: inherit; text-decoration: none; }
+
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-bottom: 0.5px solid #2a2a28; position: sticky; top: 0; background: #111110; z-index: 100; }
+  .nav-logo { font-size: 15px; font-weight: 500; color: #f5f5f0; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 13px; color: #888; }
+  .nav-links a:hover { color: #f5f5f0; }
+  .nav-cta { background: #1D9E75; color: #fff !important; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; }
+  .nav-cta:hover { background: #17845f !important; }
+
+  .hero { text-align: center; padding: 96px 32px 64px; border-bottom: 0.5px solid #2a2a28; }
+  .hero-label { font-size: 11px; font-weight: 500; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 600; color: #f5f5f0; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.01em; }
+  .hero p { font-size: 17px; color: #888; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 80px 32px; }
+
+  .step { display: flex; gap: 32px; align-items: flex-start; padding: 36px; border: 0.5px solid #2a2a28; border-radius: 16px; background: #141413; margin-bottom: 24px; }
+  .step-num { font-size: 64px; font-weight: 700; color: #1D9E75; line-height: 1; min-width: 90px; letter-spacing: -0.02em; }
+  .step-body { flex: 1; padding-top: 6px; }
+  .step-label { font-size: 11px; font-weight: 500; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .step-title { font-size: 28px; font-weight: 600; color: #f5f5f0; line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.01em; }
+  .step-text { font-size: 15px; color: #aaa; line-height: 1.7; }
+
+  .connector { display: flex; justify-content: flex-start; padding-left: 81px; margin: -8px 0 16px; }
+  .connector-line { width: 2px; height: 28px; background: linear-gradient(to bottom, #1D9E75, #2a2a28); border-radius: 1px; }
+
+  .btn { display: inline-block; background: #1D9E75; color: #fff; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 500; }
+  .btn:hover { background: #17845f; }
+
+  .bottom-cta { text-align: center; padding: 80px 32px; border-top: 0.5px solid #2a2a28; }
+  .bottom-cta h2 { font-size: 32px; font-weight: 600; margin-bottom: 14px; line-height: 1.2; }
+  .bottom-cta p { font-size: 15px; color: #888; margin-bottom: 28px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+  .btn-sub { font-size: 12px; color: #666; margin-top: 12px; }
+
+  footer { padding: 40px 32px 32px; border-top: 0.5px solid #1e1e1c; text-align: center; }
+  .footer-links { display: flex; gap: 28px; justify-content: center; margin-bottom: 18px; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: #888; }
+  .footer-links a:hover { color: #f5f5f0; }
+  .footer-meta { font-size: 12px; color: #444; line-height: 1.8; }
+
+  @media (max-width: 720px) {
+    .hero h1 { font-size: 36px; }
+    .step { flex-direction: column; gap: 8px; padding: 28px; }
+    .step-num { font-size: 48px; min-width: 0; }
+    .step-title { font-size: 22px; }
+    .connector { padding-left: 28px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Systems Over Symptoms</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="journey.html">My Journey</a>
+    <a href="meals.html">What I Eat</a>
+    <a href="system.html">The System</a>
+    <a href="https://bit.ly/SOS-community" class="nav-cta">Join Free</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">The System</div>
+  <h1>Three Steps. That's It.</h1>
+  <p>This is the entire system. Built from 14 years of living with diabetes and figuring out what nobody else would tell me. No magic. No gimmicks. Just three steps that work in this exact order.</p>
+</section>
+
+<div class="container">
+
+  <div class="step">
+    <div class="step-num">01</div>
+    <div class="step-body">
+      <div class="step-label">Step 1</div>
+      <div class="step-title">See your real numbers</div>
+      <p class="step-text">Get a CGM. Forty bucks at your local pharmacy — no prescription needed. Watch what your food actually does to your blood sugar in real time. You can't fix what you won't measure, and you can't lie to a sensor on your arm.</p>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <div class="step">
+    <div class="step-num">02</div>
+    <div class="step-body">
+      <div class="step-label">Step 2</div>
+      <div class="step-title">Stop the spikes</div>
+      <p class="step-text">Six to seven net carbs per meal. Read every label in under thirty seconds. Cut the foods that wreck your numbers — the data tells you exactly what they are. No calorie counting. No starvation. Just the rule, applied every meal.</p>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <div class="step">
+    <div class="step-num">03</div>
+    <div class="step-body">
+      <div class="step-label">Step 3</div>
+      <div class="step-title">Stay in control daily</div>
+      <p class="step-text">Walk after meals. Drink water. Sleep. Show up to the community and stay accountable. This isn't a thirty-day program — it's how I live now. Steady numbers every day, not perfect ones once.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-cta">
+  <h2>Ready to start?</h2>
+  <p>Join the free community. Walk through the system at your own pace. No credit card. No commitment.</p>
+  <a href="https://bit.ly/SOS-community" class="btn">Show me how to fix this</a>
+  <div class="btn-sub">Free to join. Start today.</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="journey.html">My Journey</a>
+    <a href="meals.html">What I Eat</a>
+    <a href="system.html">The System</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="https://bit.ly/SOS-community">Community</a>
+  </div>
+  <div class="footer-meta">
+    Systems Over Symptoms — Algorithm Collective LLC<br>
+    dropinsulin.com
+  </div>
+</footer>
+
+</body>
+</html>
