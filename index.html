@@ -93,6 +93,13 @@
   .sounds-item { display: flex; align-items: center; gap: 16px; padding: 22px 24px; border: 0.5px solid #2a2a28; border-radius: 12px; background: #141413; font-size: 15px; color: #f5f5f0; line-height: 1.45; }
   .sounds-mark { color: #d44a3a; font-size: 20px; font-weight: 600; flex-shrink: 0; line-height: 1; }
 
+  /* WHAT HAPPENS WHEN YOU JOIN */
+  .join-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0 36px; }
+  .join-card { padding: 32px 28px; border: 0.5px solid #2a2a28; border-radius: 14px; background: #141413; text-align: left; }
+  .join-num { font-size: 36px; font-weight: 700; color: #1D9E75; line-height: 1; margin-bottom: 16px; letter-spacing: -0.02em; }
+  .join-text { font-size: 17px; font-weight: 500; color: #f5f5f0; line-height: 1.4; }
+  .join-closer { font-size: 22px; font-weight: 600; color: #1D9E75; margin-bottom: 28px; letter-spacing: -0.01em; }
+
   /* MODULES LEAD-IN */
   .lead-in { font-size: 18px; color: #f5f5f0; font-weight: 500; line-height: 1.5; margin-bottom: 28px; padding-left: 14px; border-left: 3px solid #1D9E75; max-width: 620px; }
 
@@ -139,7 +146,7 @@
   .footer-meta { font-size: 12px; color: #444; line-height: 1.8; }
 
   @media (max-width: 820px) {
-    .hero-grid, .two-grid, .cgm-grid, .meals-grid, .mod-grid, .sounds-grid { grid-template-columns: 1fr; }
+    .hero-grid, .two-grid, .cgm-grid, .meals-grid, .mod-grid, .sounds-grid, .join-grid { grid-template-columns: 1fr; }
     .stat-grid { grid-template-columns: 1fr; }
     .price-grid { grid-template-columns: 1fr 1fr; }
     .hero h1 { font-size: 36px; }
@@ -162,6 +169,7 @@
     <a href="journey.html">My Journey</a>
     <a href="meals.html">What I Eat</a>
     <a href="system.html">The System</a>
+    <a href="curriculum.html">Curriculum</a>
     <a href="https://bit.ly/SOS-community" class="nav-cta">Join Free</a>
   </div>
 </nav>
@@ -304,28 +312,31 @@
   </div>
 </section>
 
-<!-- SECTION 6 — CURRICULUM TEASER -->
+<!-- SECTION 6 — WHAT HAPPENS WHEN YOU JOIN -->
 <section class="section">
   <div class="container">
-    <p class="lead-in">This isn't complicated. You don't need to learn everything. You just need to follow it.</p>
-    <div class="section-label">The System</div>
-    <h2>10 Modules. Everything You Need.</h2>
-    <p class="subhead">This isn't a collection of tips. It's a complete system built from 14 years of living with diabetes.</p>
+    <div class="section-label">Inside The Community</div>
+    <h2>What happens when you join.</h2>
+    <p class="subhead">You don't need to figure this out anymore.</p>
 
-    <div class="mod-grid">
-      <div class="mod-item"><span class="mod-num">01</span><span class="mod-name">Start Here</span><span class="mod-badge badge-live">Live Now</span></div>
-      <div class="mod-item"><span class="mod-num">02</span><span class="mod-name">The System</span><span class="mod-badge badge-live">Live Now</span></div>
-      <div class="mod-item"><span class="mod-num">03</span><span class="mod-name">Understanding Your Numbers</span><span class="mod-badge badge-partial">Lesson 1 Live</span></div>
-      <div class="mod-item"><span class="mod-num">04</span><span class="mod-name">CGM Truth and Body Awareness</span><span class="mod-badge badge-soon">Coming Soon</span></div>
-      <div class="mod-item"><span class="mod-num">05</span><span class="mod-name">Mindset</span><span class="mod-badge badge-soon">Coming Soon</span></div>
-      <div class="mod-item"><span class="mod-num">06</span><span class="mod-name">Movement</span><span class="mod-badge badge-soon">Coming Soon</span></div>
-      <div class="mod-item"><span class="mod-num">07</span><span class="mod-name">Sleep and Stress</span><span class="mod-badge badge-soon">Coming Soon</span></div>
-      <div class="mod-item"><span class="mod-num">08</span><span class="mod-name">Real Life Situations</span><span class="mod-badge badge-soon">Coming Soon</span></div>
-      <div class="mod-item"><span class="mod-num">09</span><span class="mod-name">Accountability Assignments</span><span class="mod-badge badge-soon">Coming Soon</span></div>
-      <div class="mod-item"><span class="mod-num">10</span><span class="mod-name">Troubleshooting</span><span class="mod-badge badge-soon">Coming Soon</span></div>
+    <div class="join-grid">
+      <div class="join-card">
+        <div class="join-num">01</div>
+        <div class="join-text">You see your real numbers</div>
+      </div>
+      <div class="join-card">
+        <div class="join-num">02</div>
+        <div class="join-text">You follow your first meal</div>
+      </div>
+      <div class="join-card">
+        <div class="join-num">03</div>
+        <div class="join-text">You watch your first drop</div>
+      </div>
     </div>
 
-    <a href="curriculum.html" class="btn-outline">See Full Curriculum →</a>
+    <p class="join-closer">That's it.</p>
+
+    <a href="https://bit.ly/SOS-community" class="btn">👉 Show me what to do</a>
   </div>
 </section>
 
