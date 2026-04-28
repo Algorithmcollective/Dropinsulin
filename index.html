@@ -39,11 +39,17 @@
   .ph img { width: 100%; height: 100%; object-fit: cover; }
 
   /* HERO */
-  .hero { padding: 80px 0 96px; border-bottom: 0.5px solid #2a2a28; }
+  .hero { padding: 40px 0 96px; border-bottom: 0.5px solid #2a2a28; }
   .hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
   .hero-photo { aspect-ratio: 4/5; border-radius: 12px; }
   .hero h1 { font-size: 48px; font-weight: 600; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.01em; }
-  .hero p.subhead { font-size: 17px; margin-bottom: 32px; }
+  .hero p.subhead { font-size: 17px; margin-bottom: 24px; }
+
+  .hero-alert { background: #2a1410; border: 1px solid #6a2820; border-left: 4px solid #d44a3a; border-radius: 10px; padding: 22px 28px; margin-bottom: 56px; max-width: 920px; }
+  .hero-alert p { font-size: 17px; color: #f5f5f0; line-height: 1.55; font-weight: 500; }
+  .hero-alert strong { color: #ff8a78; font-weight: 700; }
+
+  .urgency-line { font-size: 14px; color: #d44a3a; font-weight: 500; line-height: 1.5; margin-bottom: 16px; padding-left: 14px; border-left: 2px solid #d44a3a; }
 
   /* PROOF */
   .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
@@ -81,6 +87,14 @@
   .center-head { text-align: center; margin-bottom: 0; }
   .center-head .section-label { margin-bottom: 12px; }
   .center-head .subhead { margin: 0 auto; }
+
+  /* IF THIS SOUNDS LIKE YOU */
+  .sounds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 40px; max-width: 820px; }
+  .sounds-item { display: flex; align-items: center; gap: 16px; padding: 22px 24px; border: 0.5px solid #2a2a28; border-radius: 12px; background: #141413; font-size: 15px; color: #f5f5f0; line-height: 1.45; }
+  .sounds-mark { color: #d44a3a; font-size: 20px; font-weight: 600; flex-shrink: 0; line-height: 1; }
+
+  /* MODULES LEAD-IN */
+  .lead-in { font-size: 18px; color: #f5f5f0; font-weight: 500; line-height: 1.5; margin-bottom: 28px; padding-left: 14px; border-left: 3px solid #1D9E75; max-width: 620px; }
 
   /* CURRICULUM TEASER */
   .mod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 36px 0; }
@@ -125,7 +139,7 @@
   .footer-meta { font-size: 12px; color: #444; line-height: 1.8; }
 
   @media (max-width: 820px) {
-    .hero-grid, .two-grid, .cgm-grid, .meals-grid, .mod-grid { grid-template-columns: 1fr; }
+    .hero-grid, .two-grid, .cgm-grid, .meals-grid, .mod-grid, .sounds-grid { grid-template-columns: 1fr; }
     .stat-grid { grid-template-columns: 1fr; }
     .price-grid { grid-template-columns: 1fr 1fr; }
     .hero h1 { font-size: 36px; }
@@ -155,19 +169,38 @@
 <!-- SECTION 1 — HERO -->
 <section class="hero">
   <div class="container">
+    <div class="hero-alert">
+      <p><strong>If your blood sugar is over 250 right now — don't scroll.</strong> I didn't even know mine was over 500. That's when everything changed.</p>
+    </div>
     <div class="hero-grid">
       <div class="ph hero-photo"><img src="images/BEN SCHULZ.png" alt="Ben Schulz" onerror="this.style.display='none'; this.parentNode.innerHTML='Ben Schulz';"></div>
       <div>
         <div class="section-label">Real Data. Real Results.</div>
         <h1>If your blood sugar is over 250 right now — read this.</h1>
         <p class="subhead">I ignored my diabetes for 10 years. I didn't even know my blood sugar was over 500. If that's you — don't wait until it gets worse. I'll show you exactly what to do.</p>
-        <a href="https://bit.ly/SOS-community" class="btn">Show me how to fix this</a>
+        <p class="urgency-line">Every day you stay high, damage is happening whether you feel it or not.</p>
+        <a href="https://bit.ly/SOS-community" class="btn">Show me what to do</a>
         <div class="btn-row">
           <a href="https://stan.store/AlgorithmCollective/p/the-7day-blood-sugar-reset--free-guide" class="btn-outline">Free 7-Day Guide</a>
           <a href="https://stan.store/AlgorithmCollective/p/-free-15minute-blood-sugar-strategy-call" class="btn-outline">Free 15-Min Call</a>
         </div>
         <div class="btn-sub">No credit card. No commitment. Free to join.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1.5 — IF THIS SOUNDS LIKE YOU -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Honest Check</div>
+    <h2>If This Sounds Like You.</h2>
+    <p class="subhead">You're not alone. This is exactly where I was — and exactly where most of my members started.</p>
+    <div class="sounds-grid">
+      <div class="sounds-item"><span class="sounds-mark">→</span><span>You avoid checking your sugar</span></div>
+      <div class="sounds-item"><span class="sounds-mark">→</span><span>You know it's high but don't want to see it</span></div>
+      <div class="sounds-item"><span class="sounds-mark">→</span><span>You've tried diets that didn't stick</span></div>
+      <div class="sounds-item"><span class="sounds-mark">→</span><span>You feel like you're guessing every day</span></div>
     </div>
   </div>
 </section>
@@ -274,6 +307,7 @@
 <!-- SECTION 6 — CURRICULUM TEASER -->
 <section class="section">
   <div class="container">
+    <p class="lead-in">You don't need to figure anything out. Just follow step by step.</p>
     <div class="section-label">The System</div>
     <h2>10 Modules. Everything You Need.</h2>
     <p class="subhead">This isn't a collection of tips. It's a complete system built from 14 years of living with diabetes.</p>
