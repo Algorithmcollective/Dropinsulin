@@ -18,6 +18,9 @@
   .nav-links a:hover { color: #f5f5f0; }
   .nav-cta { background: #1D9E75; color: #fff !important; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; }
   .nav-cta:hover { background: #17845f !important; }
+  .nav-brand { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .nav-disclaimer { font-size: 10px; color: #666; line-height: 1.35; max-width: 360px; font-weight: 400; }
+  @media (max-width: 600px) { .nav-disclaimer { display: none; } }
 
   .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
   .section-label { font-size: 11px; font-weight: 500; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
@@ -77,7 +80,10 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Systems Over Symptoms</a>
+  <div class="nav-brand">
+    <a class="nav-logo" href="index.html">Systems Over Symptoms</a>
+    <div class="nav-disclaimer">None of this is medical advice. This is my personal journey. Always consult your doctor before making any changes.</div>
+  </div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="journey.html">My Journey</a>
